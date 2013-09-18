@@ -1,0 +1,4 @@
+./regex --parse 'input' --export 'result/output' --graph 'result/draw_dfa.dot' --graph_NFA \
+        'result/draw_nfa.dot'
+dot -Tjpg result/draw_dfa.dot -o result/draw_dfa.jpg
+dot -Tjpg result/draw_nfa.dot -o result/draw_nfa.jpg

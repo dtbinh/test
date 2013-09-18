@@ -1,0 +1,2 @@
+./regex --parse 'input' --export 'output' --graph 'draw.dot' --hfa
+dot -Tps draw.dot -o draw.ps

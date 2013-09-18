@@ -1,0 +1,32 @@
+Regen is Regular Expression Generator, Compiler, Engine.
+
+for High-speed regular expression matching, Regen gnerates
+native code from regular expression (require Xbyak).
+also Regen makes matching as parallel (require boost::thread).
+
+* install
+
+move to source directory
+% cd src
+
+and build Regen
+% make all
+or build Regen with no JIT-ver
+% make REGEN_ENABLE_JIT=no
+or no Parallelization.
+% make REGEN_ENABLE_PARALLEL=no
+or enable neither.
+% make REGEN_ENABLE_JIT=no REGEN_ENABLE_PARALLEL=no
+
+* test and behcnmarks
+% make test
+% make benchmark
+or try manually
+% make test.o && ./test.o -t THREAD_NUM {-O olevel}
+% make bench.o && ./bench.o {-O olevel}
+
+* caluculate number of NFA/DFA/SSFA's states.
+% make state_num
+% ./state_num [-m -n -d -s] (REGEX | -f REGEX_FILE)
+minimization option: DFA minimization(-m).
+target option: NFA(-n), DFA(-d), SSFA(-s)

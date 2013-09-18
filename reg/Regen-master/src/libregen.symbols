@@ -1,0 +1,22 @@
+{
+        global:
+				# Regen*, regen::Regen*
+				_ZN5regen5Regen*;
+				_ZNK5regen5Regen*;
+                # regen::Regex*
+				_ZN5regen5Regex*;
+				_ZNK5regen5Regex*;
+                # regen::NFA*
+				_ZN5regen3NFA*;
+				_ZNK5regen3NFA*;
+                # regen::DFA*
+				_ZN5regen3DFA*;
+				_ZNK5regen3DFA*;
+				_ZTVN5regen3DFA*;
+				# regen::SFA*
+				_ZN5regen4SFA*;
+				_ZNK5regen4SFA*;
+				_ZTVN5regen4SFA*;
+        local:
+                *;
+};

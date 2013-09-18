@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+
+int main (int argc, char** argv) {
+    int i, j, k, l;
+    char *p = (char *) malloc (sizeof(char) * 1000);
+    char *a = *(argv + 1);
+    for (i = 0; *(*(argv + 1)  + i) != NULL; i++) {
+        if (*(*(argv + 1) + i) == '}') { 
+            for (j = 0; j < 1000; j++) {
+                *(p + j) = '\0';
+            }
+            int num1 = 1, num2 = 0;
+            i--;
+            while (*(*(argv + 1) + i) != '{') {
+                num2 += num1 * (*(*(argv + 1) + i) - '0');
+                num1 *= 10;
+                i--;  // i = {
+            } 
+            if (*(*(argv + 1) + i - 1) == ')') {
+                num1 = 0;
+                j = i - 1; // j = .)
+                if (*(*(argv + 1) + j) == '(') 
+                    return -1;
+                while (*(*(argv + 1) + j) != '(' ) {
+                    j--;        // j = (
+                }
+                num1 = i - j + 1; //content ()'s  number
+                char *b = (char *) malloc (sizeof(char) * num1);
+                j++; // j = (.
+                *b = '(';
+                for (k = 1; *(*(argv + 1) + j) != ')'; j++, k++) {
+                    *(b + k) = *(*(argv + 1) + j);        
+                }
+                for (;*(*(argv + 1) + j) != '(';) {
+                    j--;
+                } // j = ( 
+                *(b + k ) = ')';
+                *(b + k + 1) = '\0';    //k = length
+                for (k = 0; k <= j - 1; k++) {
+                    *(p + k) = *(*(argv + 1) + k);
+                }      //k = (
+                
+                for (j = 0; j < num2; j++) {
+                    for(l = 0;*(b + l) != NULL; l++,k++ ) {
+                        *(p + k) = *(b + l);
+                    }
+                }//k = ).
+                j = 0;
+                while (*(*(argv + 1) + j) != '}')
+                    j++;
+                j++;// j = }.
+                for (;*(*(argv + 1) + j) != NULL; j++, k++) {
+                    *(p + k) = *(*(argv + 1) + j);
+                }
+                *(p + k ) = NULL;
+                a = p;
+                break;
+
+            }
+            for (j = 0; j != i; j++) {
+                *(p + j) = *(*(argv + 1) + j);
+            }   
+            for (; j < num2 + i; j++) {
+                *(p + j) = *(*(argv + 1) + i - 1);
+            }
+            while(*(*(argv + 1) + i) != '}')
+                i++;
+            i++; 
+            for (; *(*(argv + 1) + i) != NULL; i++, j++) {
+                *(p + j) = *(*(argv + 1) + i); 
+            }
+            a = p ;
+        }
+    } 
+    printf ("%s\n", a);
+}

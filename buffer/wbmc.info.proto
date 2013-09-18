@@ -1,0 +1,7 @@
+package wbmc;
+
+message Info {
+    required int32 qq = 1;
+    required string name = 2;
+    optional int32 years = 3;
+}

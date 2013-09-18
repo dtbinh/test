@@ -1,0 +1,10 @@
+HWPE.Beyond\s+\x2FCouponBar\x2FCBXmlFiles\x2F\wwv=\wLoggerHost\x3ATestHost\x3ALogsUser-Agent\x3a
+Host\x3A\wToolbar\dadblock\x2Elinkz\x2Ecom\d+version\x2Etxt
+Subject\x3A\dX-Mailer\x3a\w+letter\s+www\x2Esogou\x2Ecomwww\x2Efreescratchandwin\x2Ecom
+OS-\s+weather\sHost\x3A
+Agent\w+netguide\x2Egrip\x2Ecom
+User-Agent\x3A\sActMon\w+Host\x3A\dyou.*adserver\.warezclient\.comHWAEat\x3aldap\x3A\x2F\x2F
+SQTR_VERIFY.*Subject\x3A.*Daemon\s\x2Fasp\x2Foffers\.asp\?
+www\x2evirusprotectpro\x2ecom.*\x04\x00.*traffbest\x2Ebiz
+UID\x2FTCUser-Agent\x3A
+OnlineTRICKLERUser-Agent\x3Agotpush\x2EcomUser-Agent\x3A

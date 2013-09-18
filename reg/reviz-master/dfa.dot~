@@ -1,0 +1,15 @@
+digraph finite_state_machine {
+    rankdir=LR;
+    size="8,5"
+    node [shape = circle label=""]
+    node [shape = doublecircle label=""]; addr_0x94a59e0
+    node [shape = doublecircle label=""]; addr_0x94a5a48
+    node [shape = circle label=""]
+    addr_0x94a59e0 -> addr_0x94a5a48 [ label = "a" ]
+    node [shape = doublecircle label=""]; addr_0x94a5a48
+    node [shape = doublecircle label=""]; addr_0x94a5a48
+    node [shape = circle label=""]
+    addr_0x94a5a48 -> addr_0x94a5a48 [ label = "a" ]
+    node [shape = none label=""]; start
+    start -> addr_0x94a59e0 [ label = "start" ]
+}

@@ -1,0 +1,13 @@
+digraph "source: input" {
+ N0 [shape=circle,label="0--1",color="black"];
+N0 -> N0 [label="0-255",color="black"];
+N0 -> N1 [label="a",color="black"];
+ N1 [shape=circle,label="1--1",color="black"];
+N1 -> N2 [label="0-255",color="black"];
+ N2 [shape=circle,label="2--1",color="black"];
+N2 -> N2 [label="b",color="black"];
+N2 -> N3 [label="0-255",color="black"];
+ N3 [shape=circle,label="3--1",color="black"];
+N3 -> N4 [label="c",color="black"];
+ N4 [shape=doublecircle,label="4--1/1",color="black"];
+}

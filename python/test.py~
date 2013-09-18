@@ -1,0 +1,28 @@
+import threading
+import time
+
+class work ():
+    def __init__(self) :
+        time.sleep(3)
+        print "hello word\n"
+
+threads = []
+
+if __name__ == '__main__':
+    for i in range(10):
+        t = threading.Thread(target  = work)
+        threads.append(t)
+        t.start()
+        if (t.isAlive()) :
+            print "the thread is alive\n"  
+
+    for item in threading.enumerate():
+        print item
+
+    for item in threads:
+        print item
+
+print "alive %d threads\n" % (threading.activeCount() - 1)
+
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="DesignPattern.DisplayElement"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.Current"/>
+<fullyQualifiedTypeName name="DesignPattern.Subject"/>
+<fullyQualifiedTypeName name="DesignPattern.Observer"/>
+<fullyQualifiedTypeName name="DesignPattern.CurrentConditionsDisplay"/>
+<fullyQualifiedTypeName name="DesignPattern.WeatherData"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="observerPattern.WeatherData"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.Region"/>
+<fullyQualifiedTypeName name="obPattern.Observer"/>
+<fullyQualifiedTypeName name="obPattern.DisplayElement"/>
+<fullyQualifiedTypeName name="obPattern.Subject"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.SystemException"/>
+<fullyQualifiedTypeName name="obPattern.WeatherData"/>
+<fullyQualifiedTypeName name="obPattern.CurrentConditionsDisplay"/>
+<fullyQualifiedTypeName name="java.io.FilterInputStream"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="LowerCaseInputStream"/>
+<fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="Meme.a1"/>
+<fullyQualifiedTypeName name="Meme.b1"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="Meme.step"/>
+<fullyQualifiedTypeName name="Meme.Step"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Meme.Lsa"/>
+</qualifiedTypeNameHistroy>

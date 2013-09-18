@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FeatureImportWizard">
+		<item value="" key="droplocation2"/>
+		<item value="/usr/lib/eclipse" key="droplocation1"/>
+		<item value="/usr/lib/eclipse" key="droplocation0"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="PluginImportWizard">
+	</section>
+</section>

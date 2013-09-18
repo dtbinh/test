@@ -1,0 +1,16 @@
+digraph "source: input" {
+ 0 [shape=circle,label="0-0"];
+ 1 [shape=circle,label="1-1"];
+ 2 [shape=circle,label="2-2"];
+ 3 [shape=doublecircle,label="3-3/1"];
+0 -> 1 [label="a"];
+0 -> 0 [color="limegreen"];
+1 -> 1 [label="a"];
+1 -> 2 [label="b"];
+1 -> 0 [color="limegreen"];
+2 -> 1 [label="a"];
+2 -> 3 [label="c"];
+2 -> 0 [color="limegreen"];
+3 -> 1 [label="a"];
+3 -> 0 [color="limegreen"];
+}

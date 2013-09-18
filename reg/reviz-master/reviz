@@ -1,0 +1,11 @@
+./redot $1
+dot -Tps nfa.dot -o nfa.ps
+dot -Tps dfa.dot -o dfa.ps
+dot -Tps dfa_opt.dot -o dfa_opt.ps
+
+rm -f nfa.dot dfa.dot dfa_opt.dot
+
+
+# sample run:
+# ./reviz '((a|b|c)*|(d|e)+)f'
+

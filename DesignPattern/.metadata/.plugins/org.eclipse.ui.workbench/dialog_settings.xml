@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="PreferencesImportWizard">
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="313" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ZipFileImportWizard">
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ShowViewDialog">
+		<item value="380" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.pde.ui.PluginsView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="76" key="DIALOG_Y_ORIGIN"/>
+		<item value="450" key="DIALOG_HEIGHT"/>
+		<item value="451" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.pde.ui"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+	</section>
+</section>
