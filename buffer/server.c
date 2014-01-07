@@ -7,13 +7,16 @@
 #include <netinet/in.h>
 #include <unistd.h>
 
+#define MAXLINE 4096
+
+
 int main () {
     int sock;
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
     addr.sin_port = htons(7777);
-    char buf[1024];
+    char buf[4096];
     int nbyte, conn;
 
     /*创建socket描述符*/
@@ -37,21 +40,19 @@ int main () {
         printf("Listened Success\n");
     }
 
-    /*建立链接*/
-    while(1) {
+    /*建立链接, 并输出信息*/
         if ((conn = accept(sock, (struct sockaddr*)NULL, NULL)) < 0) {
-            printf ("Connected Error");
-            continue;
+            printf ("Connected Error\n");
         } else {
-            printf ("Connected Success");
+            printf ("Connected Success %d\n", conn);
         }
-
-        nbyte = recv(sock, &buf[0], 512, 0);
-        buf[512] = '\0';
-        printf("%s\n", buf);
-        close(conn);
-    }
-    
+        if ((nbyte = recv(conn, buf, MAXLINE, 0)) > 0) {
+            buf[nbyte] = '\0';
+            printf("byte length: %d\n%s\n", nbyte,buf);
+                
+        } else {
+            printf ("Wrong return value:%d\n", nbyte);
+        }
     close(sock);
 
 }

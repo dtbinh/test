@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/wbmcweixin/!svn/ver/1/1
+END
+config.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/wbmcweixin/!svn/ver/2/1/config.yaml
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/wbmcweixin/!svn/ver/7/1/test.py
+END
+test.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/wbmcweixin/!svn/ver/7/1/test.pyc
+END
+weixinInterface.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/wbmcweixin/!svn/ver/6/1/weixinInterface.py
+END
+weixinInterface.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wbmcweixin/!svn/ver/7/1/weixinInterface.pyc
+END
+index.wsgi
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/wbmcweixin/!svn/ver/5/1/index.wsgi
+END

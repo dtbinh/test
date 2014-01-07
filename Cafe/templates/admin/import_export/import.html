@@ -1,0 +1,117 @@
+{% extends "admin/import_export/base.html" %}
+{% load url from future %}
+{% load i18n %}
+{% load admin_urls %}
+{% load import_export_tags %}
+
+{% block breadcrumbs_last %}
+导入
+{% endblock %}
+
+{% block content %}
+<h1>导入</h1>
+
+{% if confirm_form %}
+  <form action="{% url opts|admin_urlname:"process_import" %}" method="POST">
+    {% csrf_token %}
+    {{ confirm_form.as_p }}
+    <p>
+    以下是将要导入的文件，如果您对导入结果满意，请点击确认导入
+    </p>
+    <div class="submit-row">
+      <input type="submit" class="default" name="confirm" value="确认导入">
+    </div>
+  </form>
+
+{% else %}
+  <form action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p>
+     将要导入以下域
+      {% for f in fields  %}
+        {% if forloop.counter0 %}
+        , 
+        {% endif %}
+        <tt>{{ f }}</tt>
+      {% endfor %}
+    </p>
+
+    <fieldset class="module aligned">
+      {% for field in form %}
+        <div class="form-row">
+          {{ field.errors }}
+
+          {{ field.label_tag }}
+
+          {{ field }}
+
+          {% if field.field.help_text %}
+          <p class="help">{{ field.field.help_text|safe }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </fieldset>
+
+    <div class="submit-row">
+      <input type="submit" class="default" value="提交">
+    </div>
+  </form>
+{% endif %}
+
+{% if result %}
+
+  {% if result.has_errors %}
+    <h2>错误</h2>
+    <ul>
+      {% for error in result.base_errors  %}
+      <li>{{ error.error }}</li>
+      {% endfor %}
+      {% for line, errors in result.row_errors %}
+        {% for error in errors %}
+          <li>
+            行数: {{ line }} - {{ error.error }}
+            <div class="traceback">{{ error.traceback|linebreaks }}</div>
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  {% else %}
+
+  <h2>
+    预览
+  </h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        {% for field in fields %}
+          <th>{{ field }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    {% for row in result.rows %}
+    <tr>
+      <td>
+        {% if row.import_type == 'new' %}
+          新建
+        {% elif row.import_type == 'skip' %}
+          跳过
+        {% elif row.import_type == 'delete' %}
+          删除 
+        {% elif row.import_type == 'update' %}
+          更新 
+        {% endif %}
+      </td>
+      {% for field in row.diff %}
+      <td>
+        {{ field }}
+      </td>
+      {% endfor %}
+    </etr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <link href = "/static/admin/css/review.css" rel="stylesheet" type="text/css">  
+    </head>
+    <body>
+        <div class="texthead"><h1>线索信息</h1></div>
+        <TABLE BORDER="1" cellpadding="30" cellspacing="0" class = "table1">
+            <TR> <TH><B>线索文号</B></TH> 
+                <TH><B>线索时间</B></TH>
+                <TH><B>线索来源</B></TH>
+            </TR>
+            <TR> 
+                <TH> {{ clueIdenty }}</TH>
+                <TH> {{ clueTime }}</TH>
+                <TH> {{ clueSource }}</TH>
+            </TR>
+        </TABLE>
+        <div class="texthead"><h1>涉及人员信息</h1></div>
+        {% if persons %}
+        {% for person in persons %}
+        <TABLE BORDER="1" cellpadding="30" cellspacing="0" class = "table1">
+            <TR> 
+                <TH class="th1"><B>姓名</B></TH> 
+                <TH class="th2"> {{ person.name }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>性别</B></TH>
+                {% ifequal person.sex 'F' %}
+                <TH class="th2">女</TH>
+                {% endifequal %}
+                {% ifequal person.sex 'M' %}
+                <TH class="th2">男</TH>
+                {% endifequal %}
+            </TR>
+            <TR>
+                <TH class="th1"><B>身份类型</B></TH>
+                {% ifequal person.idType 'shen' %}
+                <TH class="th2"> 身份证</TH>
+                {% endifequal %}
+                {% ifequal person.idType 'hu' %}
+                <TH class="th2"> 护照</TH>
+                {% endifequal %}
+                {% ifequal person.idType 'gang' %}
+                <TH class="th2"> 港澳通行证</TH>
+                {% endifequal %}
+                {% ifequal person.idType 'qian' %}
+                <TH class="th2"> 签证</TH>
+                {% endifequal %}
+            </TR>
+            <TR>
+                <TH class="th1"><B>证件号码</B></TH>
+                <TH class="th2"> {{ person.idNum }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>是否涉京</B></TH>
+                {% ifequal person.isCapital 'Y' %}
+                <TH class="th2"> 涉京</TH>
+                {% else%}
+                <TH class="th2"> 非涉京</TH>
+                {% endifequal %}
+            </TR>
+            <TR>
+                <TH class="th1"><B>籍贯</B></TH>
+                <TH class="th2"> {{ person.hometown }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>户籍所在地</B></TH>
+                <TH class="th2"> {{ person.huji }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>现住址</B></TH>
+                <TH class="th2"> {{ person.livingPlace }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>工作单位</B></TH>
+                <TH class="th2"> {{ person.working }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>通讯方式</B></TH>
+                <TH class="th2"> {{ person.contact }}</TH>
+            </TR>
+        </TABLE>
+        {% endfor %}
+        {% else %}
+            <div class="head"><h4>无人员信息</h4></div>
+        {% endif %}
+
+
+        <div class="texthead"><h1>涉及事件信息</h1></div>
+        {% if events %}
+        {% for event in events %}
+        <TABLE BORDER="1" cellpadding="30" cellspacing="0" class = "table1">
+            <TR>
+                <TH class="th1"><B>事件信息</B></TH>
+                <TH class="th2"> {{ event.eventNote }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>发生时间</B></TH>
+                <TH class="th2"> {{ event.eventTime }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>涉及人员</B></TH>
+                <TH class="th2"> {{ event.eventPerson }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>发生地点</B></TH>
+                <TH class="th2"> {{ event.eventPlace }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>处理结果</B></TH>
+                <TH class="th2"> {{ event.eventResult }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>网络信息</B></TH>
+                <TH class="th2"> {{ event.eventOnline }}</TH>
+            </TR>
+            <TR>
+                <TH class="th1"><B>涉外信息</B></TH>
+                <TH class="th2"> {{ event.eventAlien }}</TH>
+            </TR>
+        </table>    
+        {% endfor %}
+        {% else %}
+            <div class="head"><h4>无事件信息</h4></div>
+        {% endif %}
+
+
+        <div class="texthead"><h1>涉及组织信息</h1></div>
+        {% if groups %}
+        {% for group in groups %}
+        <TABLE BORDER="1" cellpadding="30" cellspacing="0" class = "table1">
+            <TR> <TH class="th1"><B>组织名称</B></TH> 
+                <TH> {{ group.groupName }}</TH>
+            </TR>
+            <TR> 
+                <TH class="th1"><B>组织备注</B></TH>
+                <TH> {{ group.groupNote }}</TH>
+            </TR>
+        </TABLE>
+        {% endfor %}
+        {% else %}
+        <div class="head"><h4>无组织信息</h4></div>
+        {% endif %}
+    </body>
+</html>

@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <time.h>
-#include <stdbool.h>
+#define PR(x, type) printf((#type), (x))
+#define __t \
+    int main () { \
+        int c = 1; \
+        PR(c , %d);\
+    }\
 
-int main () {
-    struct a {
-        int a;
-        char c[];
-    } b ;
+__t
 
-    b.c = "a";
-}
+

@@ -1,0 +1,8 @@
+{% extends "admin/import_export/change_list.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+  <li><a href="import/" class="import_link">导入</a></li>
+  <li><a href="export/{{ cl.get_query_string }}" class="export_link">导出</a></li>
+  {{ block.super }}
+{% endblock %}
